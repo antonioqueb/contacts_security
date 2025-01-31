@@ -1,0 +1,9 @@
+<odoo>
+    <!-- Grupo específico para permitir la creación y edición de contactos -->
+    <record id="group_contact_manager" model="res.groups">
+        <field name="name">Gestores de Contactos</field>
+        <!-- La categoría indica en qué sección se mostrará el grupo en la interfaz.
+             En este caso, lo ubicamos en "Ventas/CRM", la misma del módulo contacts. -->
+        <field name="category_id" ref="base.module_category_sales_management"/>
+    </record>
+</odoo>
