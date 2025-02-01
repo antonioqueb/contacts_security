@@ -1,11 +1,7 @@
 <odoo>
-    <!--
-      Grupo especial: "Gestores de Contactos"
-      Usuarios en este grupo podrán crear, editar y eliminar contactos (res.partner).
-    -->
     <record id="group_contact_manager" model="res.groups">
         <field name="name">Gestores de Contactos</field>
-        <!-- Ubícalo en la misma categoría de Ventas/CRM para que sea fácil de encontrar -->
-        <field name="category_id" ref="base.module_category_sales_management"/>
+        <!-- Ajustado para apuntar a una categoría que sí existe en tu Odoo -->
+        <field name="category_id" ref="sales_team.module_category_sales_team"/>
     </record>
 </odoo>

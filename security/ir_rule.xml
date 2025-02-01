@@ -11,8 +11,8 @@
         <field name="groups" eval="[(4, ref('contact_restriction.group_contact_manager'))]"/>
     </record>
 
-    <!-- Regla para usuarios internos (incluyendo grupo_salesman/manager si no tienen el de contact_manager),
-         solo lectura a todos los contactos. -->
+    <!-- Regla para usuarios internos (incluyendo vendedores o gerentes)
+         sin el grupo contact_manager, solo lectura a todos los contactos. -->
     <record id="contact_readonly_rule" model="ir.rule">
         <field name="name">Contact Read Only</field>
         <field name="model_id" ref="base.model_res_partner"/>
@@ -21,8 +21,6 @@
         <field name="perm_write" eval="False"/>
         <field name="perm_create" eval="False"/>
         <field name="perm_unlink" eval="False"/>
-        <!-- Se aplica a usuarios internos. Ojo que gerentes y vendedores también
-             suelen heredar base.group_user si no tienen el manager global. -->
         <field name="groups" eval="[(4, ref('base.group_user'))]"/>
     </record>
 </odoo>
