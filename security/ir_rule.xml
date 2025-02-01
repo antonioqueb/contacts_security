@@ -8,7 +8,7 @@
         <field name="perm_write" eval="True"/>
         <field name="perm_create" eval="True"/>
         <field name="perm_unlink" eval="True"/>
-        <field name="groups" eval="[(4, ref('contact_restriction.group_contact_manager'))]"/>
+        <field name="groups" eval="[(4, ref('contacts_security.group_contact_manager'))]"/>
     </record>
 
     <!-- Regla para usuarios internos (incluyendo vendedores o gerentes)

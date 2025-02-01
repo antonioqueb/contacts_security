@@ -1,4 +1,4 @@
-# contact_restriction
+# contacts_security
 
 ## Descripción
 
@@ -17,7 +17,7 @@ el botón "Crear y Editar…" para usuarios sin permiso.
 
 ## Instalación
 
-1. Copia la carpeta `contact_restriction` en tu carpeta de addons reconocida por Odoo.
+1. Copia la carpeta `contacts_security` en tu carpeta de addons reconocida por Odoo.
 2. Actualiza la lista de aplicaciones y luego instala **"Restricción de Creación de Contactos"**.
 3. Asigna el grupo "Gestores de Contactos" a quienes necesiten crear/editar contactos.
 
