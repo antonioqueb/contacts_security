@@ -2,6 +2,6 @@
     <record id="group_contact_manager" model="res.groups">
         <field name="name">Gestores de Contactos</field>
         <!-- Ajustado para apuntar a una categoría que sí existe en tu Odoo -->
-        <field name="category_id" ref="sales_team.module_category_sales_team"/>
+        <field name="category_id" ref="base.module_category_sales"/>
     </record>
 </odoo>
