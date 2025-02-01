@@ -25,3 +25,4 @@ Todos los demás usuarios (incluyendo los de Ventas) se limitan a solo lectura.
     'installable': True,
     'application': False,
 }
+ 

@@ -12,7 +12,7 @@
     </record>
 
     <!-- Regla para usuarios internos (incluyendo vendedores o gerentes)
-         sin el grupo contact_manager, solo lectura a todos los contactos. -->
+         sin el grupo contact_manager, solo lectura -->
     <record id="contact_readonly_rule" model="ir.rule">
         <field name="name">Contact Read Only</field>
         <field name="model_id" ref="base.model_res_partner"/>
