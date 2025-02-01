@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Definición del grupo "Gestores de Contactos" -->
     <record id="group_contact_manager" model="res.groups">
         <field name="name">Gestores de Contactos</field>
         <field name="category_id" ref="base.module_category_sales"/>

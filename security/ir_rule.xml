@@ -8,8 +8,8 @@
         <field name="perm_write" eval="True"/>
         <field name="perm_create" eval="True"/>
         <field name="perm_unlink" eval="True"/>
-        <!-- Asegúrate de usar el nombre correcto del módulo en la referencia -->
-        <field name="groups" eval="[(4, ref('tu_modulo.group_contact_manager'))]"/>
+        <!-- Usa el nombre correcto del módulo en la referencia -->
+        <field name="groups" eval="[(4, ref('contacts_security.group_contact_manager'))]"/>
     </record>
 
     <!-- Regla para usuarios internos (incluyendo vendedores o gerentes)
