@@ -15,7 +15,6 @@
         'contacts',
         'sales_team',
         'sale_management',
-        'base',
     ],
     'data': [
         'security/contact_security.xml',

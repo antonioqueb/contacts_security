@@ -1,7 +1,6 @@
 <odoo>
     <record id="group_contact_manager" model="res.groups">
         <field name="name">Gestores de Contactos</field>
-        <!-- Asegúrate de apuntar a una categoría existente -->
         <field name="category_id" ref="base.module_category_sales"/>
     </record>
 </odoo>
