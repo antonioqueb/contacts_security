@@ -1,24 +1,26 @@
 {
-    'name': 'Contacts Security',
-    'version': '1.0',
+    'name': 'Restricción de Creación de Contactos',
+    'version': '1.0.0',
     'category': 'Sales/CRM',
-    'summary': 'Restringe la creación y edición de contactos a un grupo específico.',
+    'summary': 'Restringe la creación y edición de contactos a un grupo específico',
     'description': """
-    Módulo para Odoo 17 que añade un grupo especial de "Gestores de Contactos"
-    y asigna permisos para que solo ellos puedan crear y editar contactos,
-    mientras que el resto de usuarios internos tendrán acceso de lectura sola.
-    """,
-    'author': 'Alphaqueb Consulting S.A.S.',
+Este módulo de Odoo 17 crea un grupo "Gestores de Contactos" con permisos completos
+para crear y editar contactos (res.partner). 
+Todos los demás usuarios (incluyendo los de Ventas) se limitan a solo lectura.
+""",
+    'author': 'Alphaqueb Consulting',
     'website': 'https://www.tusitio.com',
+    'license': 'LGPL-3',  # Siempre conviene especificar la licencia
     'depends': [
-        'contacts',  
+        'contacts',        # Para asegurarte de que el modelo res.partner ya exista
+        'sales_team',      # Donde se definen los grupos de ventas
+        'sale_management', # Si usas la app "Ventas" completa
     ],
     'data': [
         'security/contact_security.xml',
         'security/ir.model.access.csv',
-        # 'security/ir_rule.xml',  # Descomentar si deseas usar record rules adicionales
+        'security/ir_rule.xml',
     ],
     'installable': True,
     'application': False,
-    'license': 'LGPL-3',
 }

@@ -1,42 +1,37 @@
-# Contacts Security
+# contact_restriction
 
-Este módulo para Odoo 17 añade reglas de seguridad para que **solo** los usuarios
-con el **grupo "Gestores de Contactos"** puedan crear y editar registros de `res.partner`.
-El resto de usuarios internos podrán ver los contactos, pero no tendrán la opción
-de crearlos ni editarlos.
+## Descripción
 
----
+Este módulo para Odoo 17 restringe la **creación y edición de contactos** (`res.partner`)
+solo a usuarios que pertenezcan al grupo **"Gestores de Contactos"**. Todos los demás
+usuarios, incluyendo los de Ventas, quedan con acceso de solo lectura. Esto impide que
+en un presupuesto/venta, al buscar o teclear un nombre de contacto inexistente, aparezca
+el botón "Crear y Editar…" para usuarios sin permiso.
 
 ## Características
 
-1. Crea un grupo nuevo (`Gestores de Contactos`) que tiene permisos totales
-   sobre el modelo `res.partner`.
-2. Limita a los usuarios del grupo `base.group_user` (usuarios internos normales)
-   a solo lectura (`perm_read`) sobre `res.partner`.
-3. (Opcional) Incluye reglas de registros (`record rules`) si se requiere mayor granularidad.
+1. Crea un grupo **"Gestores de Contactos"** con acceso total (crear, editar, eliminar) sobre `res.partner`.
+2. Deja a los usuarios internos (`base.group_user`) únicamente con lectura.
+3. **Sobrescribe** los permisos en los grupos de ventas (`sales_team.group_sale_salesman` y `sales_team.group_sale_manager`) para que no puedan crear ni editar contactos.
+4. Añade **record rules** que refuerzan que solo el grupo "Gestores de Contactos" tenga escritura y creación.
 
 ## Instalación
 
-1. Copia la carpeta `contacts_security` dentro de tu carpeta `addons` o en una
-   ruta reconocida por Odoo.
-2. Actualiza la lista de aplicaciones desde el **Apps** en Odoo o usando el comando:
- odoo -u contacts_security -d <nombre_base_datos>
-3. Instala el módulo **Contacts Security** en Odoo.
+1. Copia la carpeta `contact_restriction` en tu carpeta de addons reconocida por Odoo.
+2. Actualiza la lista de aplicaciones y luego instala **"Restricción de Creación de Contactos"**.
+3. Asigna el grupo "Gestores de Contactos" a quienes necesiten crear/editar contactos.
 
 ## Uso
 
-1. Navega a **Configuración** → **Usuarios y Empresas** → **Usuarios**.
-2. Edita un usuario y márcalo en el grupo **"Gestores de Contactos"**.
-- Ese usuario ahora podrá crear, editar y borrar contactos.
-3. Cualquier usuario que no sea parte de ese grupo, pero que sea un usuario interno
-(`base.group_user`), tendrá permiso únicamente de lectura sobre los contactos.
-4. Comprueba que el botón **"Crear"** y la acción **"Editar"** aparezcan solo para
-los "Gestores de Contactos".
+- Un usuario sin el grupo "Gestores de Contactos" no verá el botón "Crear" en el módulo de contactos
+  ni podrá crear contactos desde formularios de ventas (desaparecerá la opción "Crear y Editar…").
+- Un usuario con el grupo "Gestores de Contactos" sí tendrá permisos para crear, editar o borrar contactos.
 
-## Créditos
+---
 
-- Autor: Alphaqueb Consulting
-- Basado en la documentación oficial de Odoo y buenas prácticas de seguridad.
+## Notas
 
-
-
+- Si el usuario pertenece al grupo “Administrador” o “Configuración”, tendrá permisos totales
+  independientemente de este módulo, ya que Odoo considera a los administradores como superusuarios.
+- Si deseas permitir que los gerentes de ventas sí creen contactos, puedes ajustar la línea CSV correspondiente
+  en `ir.model.access.csv` y/o en las record rules, devolviendo `perm_create=1`.
