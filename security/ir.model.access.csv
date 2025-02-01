@@ -1,5 +1,5 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_partner_contact_manager","Gestores de Contactos - res.partner","model_res_partner","contact_restriction.group_contact_manager",1,1,1,1
-"access_partner_user_readonly","Usuarios Internos - Solo lectura - res.partner","model_res_partner","base.group_user",1,0,0,0
-"access_partner_salesman_override","Vendedores - Sin creación - res.partner","model_res_partner","sales_team.group_sale_salesman",1,0,0,0
-"access_partner_sale_manager_override","Gerente de Ventas - Sin creación - res.partner","model_res_partner","sales_team.group_sale_manager",1,0,0,0
+"access_partner_contact_manager","Gestores de Contactos - res.partner","base.model_res_partner","contact_restriction.group_contact_manager",1,1,1,1
+"access_partner_user_readonly","Usuarios Internos - Solo lectura - res.partner","base.model_res_partner","base.group_user",1,0,0,0
+"access_partner_salesman_override","Vendedores - Sin creación - res.partner","base.model_res_partner","sales_team.group_sale_salesman",1,0,0,0
+"access_partner_sale_manager_override","Gerente de Ventas - Sin creación - res.partner","base.model_res_partner","sales_team.group_sale_manager",1,0,0,0
