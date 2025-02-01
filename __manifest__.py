@@ -15,6 +15,7 @@ Todos los demás usuarios (incluyendo los de Ventas) se limitan a solo lectura.
         'contacts',        # Para asegurarte de que el modelo res.partner ya exista
         'sales_team',      # Donde se definen los grupos de ventas
         'sale_management', # Si usas la app "Ventas" completa
+        'base',            # Para los permisos básicos
     ],
     'data': [
         'security/contact_security.xml',
